@@ -1,12 +1,12 @@
 fun insertionSort(arr: IntArray) : IntArray {
-    for (j in 1..arr.size - 1) {
-        var i = j - 1
-        val t = arr[j]
-        while ((i >= 0) && (arr[i] > t)) {
-            arr[i + 1] = arr[i]
-            i--
+    for (i in 1 until arr.size) {
+        var t = arr[i]
+        var j = i - 1
+        while (j >= 0 && arr[j] > t) {
+            arr[j + 1] = arr[j]
+            j--
         }
-        arr[i + 1] = t
+        arr[j + 1] = t
     }
     return arr
 }
